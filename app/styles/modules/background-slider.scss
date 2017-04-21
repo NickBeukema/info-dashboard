@@ -1,0 +1,44 @@
+.background-slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -3;
+
+  &__inset-shadow {
+    box-shadow: inset 0px 0px 730px 35px rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    //float: left;
+    //width: 33%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+    transition: opacity 4s;
+    opacity: 0;
+
+    &--active {
+      display: block;
+      opacity: 1;
+      z-index: -2;
+    }
+
+    &--fading-in {
+      display: block;
+      z-index: -1;
+      opacity: 1;
+    }
+  }
+}
