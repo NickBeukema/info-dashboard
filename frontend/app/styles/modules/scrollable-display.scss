@@ -1,0 +1,48 @@
+.scrollable-display {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 30px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+
+  &--wrapped {
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    text-align: center;
+    background-color: rgba(255,255,255,1);
+    border: 1px solid #666;
+    box-shadow: 0px 2px 7px 1px rgba(0, 0, 0, 0.5);
+    padding: 5px;
+    color: black;
+    border-radius: 3px;
+  }
+
+  &__item--small-weather {
+    width: 90px;
+  }
+
+  &__item--large-weather {
+    width: 150px;
+  }
+
+  &__item-title {
+    font-size: 12px;
+    margin-bottom: 4px;
+    border-bottom: 1px solid #ddd;
+
+    &--large {
+      font-size: 18px;
+    }
+  }
+
+
+  &__item-content {
+    font-size: 13px;
+  }
+}

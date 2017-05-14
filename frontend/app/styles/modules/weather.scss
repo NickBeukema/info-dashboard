@@ -1,0 +1,47 @@
+.weather {
+  width: 100%;
+  background-color: rgba(0,0,0,.4);
+  padding: 20px;
+  color: white;
+
+  &__degree {
+    &:before {
+      content: "a";
+      color: transparent;
+    }
+    &:after {
+      content: "\00b0 F";
+      font-size: 50%;
+      position: absolute;
+      top: 9%;
+      right: 0;
+    }
+  }
+
+  &__temperature-text {
+    position: relative;
+  }
+
+  &__forcast {
+    display: flex;
+  }
+
+  &__forcast--icon {
+    margin-left: 6px;
+    margin-right: 6px;
+  }
+
+  &__large-forcast-temp {
+    display: flex;
+    justify-content: space-around;
+    font-size: 18px;
+    margin-bottom: 8px;
+  }
+
+  &__large-forcast-high-temp {
+  }
+
+  &__large-forcast-low-temp {
+    color: #666;
+  }
+}

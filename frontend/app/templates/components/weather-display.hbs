@@ -1,0 +1,43 @@
+<div class="weather">
+  {{#if isLoading }}
+    <h2 style="color: white">Loading..</h2>
+  {{ else }}
+  <h2><span class="weather__temperature-text">{{ weatherData.currentTemperature }}<span class="weather__degree"></span></span> and {{ weatherData.currentSummary }}</h2>
+
+    <p class="weather__text">{{ weatherData.hourlySummary }}</p>
+
+    <div class="scrollable-display">
+      {{#each hourlyDataDisplay as |hour|}}
+        <div class="scrollable-display__item scrollable-display__item--weather">
+          <p class="scrollable-display__item-title">{{hour.time}}</p>
+
+          <div class="scrollable-display__item-content weather__forcast">
+            {{sky-icon classNames="weather__forcast--icon" icon=hour.icon}}
+            <span class="weather__temperature-text">{{hour.temperature}}<span class="weather__degree"></span></span>
+          </div>
+
+        </div>
+      {{/each}}
+    </div>
+
+    <div class="scrollable-display scrollable-display--wrapped">
+      {{#each dailyDataDisplay as |day|}}
+        <div class="scrollable-display__item scrollable-display__item--large-weather">
+          <p class="scrollable-display__item-title scrollable-display__item-title--large">{{day.day}}</p>
+        
+          <div class="scrollable-display__item-content">
+            <div class="weather__large-forcast-temp">
+              <span class="weather__large-forcast-high-temp weather__temperature-text">{{day.temperatureMax}}<span class="weather__degree"></span></span>
+              <span class="weather__large-forcast-low-temp weather__temperature-text">{{day.temperatureMin}}<span class="weather__degree"></span></span>
+            </div>
+
+            {{sky-icon icon=day.icon size=50}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+
+
+
+  {{/if}}
+</div>

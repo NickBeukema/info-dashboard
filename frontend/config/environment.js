@@ -7,7 +7,6 @@ module.exports = function(environment) {
     rootURL: '/',
     locationType: 'auto',
 
-
     googleFonts: [
       'Open+Sans:300,400,700',
     ],
@@ -42,6 +41,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.API_HOST = (process.env.API_HOST || 'http://localhost:3000');
   }
 
   if (environment === 'test') {
@@ -53,6 +53,7 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.API_HOST = '';
   }
 
   if (environment === 'production') {
