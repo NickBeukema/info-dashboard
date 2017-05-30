@@ -4,7 +4,7 @@ module.exports = {
   darkSkyApiKey: process.env.DARK_SKY_API_KEY,
   rootPath: './public/',
   databaseName: 'dashboard_app',
-  databaseUser: 'root',
+  databaseUser: 'postgres',
   databasePassword: null,
   refreshThreshold: 1000 * 60 * 30
 }
