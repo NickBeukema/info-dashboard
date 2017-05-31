@@ -1,6 +1,10 @@
 <div class="weather">
   {{#if isLoading }}
-    <h2 style="color: white">Loading..</h2>
+  <div class="loading">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
   {{ else }}
     <div class="weather__text-content">
       <h4>
