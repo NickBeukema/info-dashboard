@@ -1,0 +1,50 @@
+$chart-color: rgba(255,255,255,0.5);
+
+.data-chart {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+
+  &:before {
+    content: '';
+    border-top: 1px solid $chart-color;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+  }
+
+  &__item {
+    text-align: center;
+    position: relative;
+    height: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    &:before {
+      content: '';
+      border-left: 1px solid $chart-color;
+      height: 10%;
+      left: 50%;
+      top: 45%;
+      position: absolute;
+    }
+  }
+
+  &__weather-icon {
+    float: right;
+    margin-top: 2px;
+  }
+
+  &__top-content {
+    height: 25px;
+    font-size: 14px;
+  }
+
+  &__bottom-content {
+    height: 25px;
+    font-size: 14px;
+    margin-top: 3px;
+  }
+}

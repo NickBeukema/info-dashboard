@@ -8,9 +8,10 @@ export default Ember.Component.extend({
   attributeBindings: ['width', 'height'],
   tagName: 'canvas',
   icon: 'rain',
+  color: 'black',
 
   didInsertElement() {
-    let skycon = new Skycons();
+    let skycon = new Skycons({ color: this.get('color')});
     skycon.add(this.get('elementId'), this.get('icon'));
     skycon.play();
   }

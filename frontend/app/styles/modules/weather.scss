@@ -1,8 +1,33 @@
 .weather {
   width: 100%;
+  position: fixed;
+  bottom: 0;
   background-color: rgba(0,0,0,.4);
-  padding: 20px;
+  padding: 20px 50px;
   color: white;
+  display: flex;
+  height: 125px;
+
+  &__text-content {
+    width: 350px;
+    flex-shrink: 0;
+    margin-right: 20px;
+  }
+
+  &__hourly-content {
+    width: calc(100% - 700px);
+    display: flex;
+    align-items: center;
+  }
+
+  &__daily-content {
+    width: 350px;
+    margin-left: 20px;
+
+    .weather-chart {
+      float: right;
+    }
+  }
 
   &__degree {
     &:before {
@@ -16,10 +41,15 @@
       top: 9%;
       right: 0;
     }
+
+    &--large:before {
+      font-size: 50%;
+    }
   }
 
   &__temperature-text {
     position: relative;
+    display: inline-block;
   }
 
   &__forcast {

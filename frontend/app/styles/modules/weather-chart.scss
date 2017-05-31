@@ -1,0 +1,27 @@
+.weather-chart {
+  font-size: 14px;
+
+  &__day-label {
+    width: 100px;
+  }
+
+  &__weather-icon {
+    width: 80px;
+  }
+
+  &__temperature-data {
+    width: 35px;
+
+    &--low {
+      color: rgba(255,255,255,0.6);
+    }
+  }
+
+
+
+  &__item {
+    width: 100%;
+  }
+
+
+}

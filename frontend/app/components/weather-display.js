@@ -22,8 +22,8 @@ export default Ember.Component.extend({
       return idx % 2 == 0;
     }).slice(0,5).map(hour => {
       return {
-        temperature: hour.temperature,
-        time: moment(hour.time * 1000).format("LT"),
+        temperature: Math.round(hour.temperature),
+        time: moment(hour.time * 1000).format("ha"),
         icon: hour.icon
       };
     });
@@ -37,8 +37,8 @@ export default Ember.Component.extend({
 
     return dailyData.slice(0,3).map(day => {
       return {
-        temperatureMin: day.temperatureMin,
-        temperatureMax: day.temperatureMax,
+        temperatureMin: Math.round(day.temperatureMin),
+        temperatureMax: Math.round(day.temperatureMax),
         summary: day.summary,
         icon: day.icon,
         day: moment(day.time * 1000).format('dddd')
@@ -46,7 +46,6 @@ export default Ember.Component.extend({
 
     });
   }),
-
 
   didInsertElement() {
     navigator.geolocation.getCurrentPosition(position => {
