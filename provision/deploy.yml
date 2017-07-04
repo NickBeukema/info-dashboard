@@ -1,0 +1,6 @@
+---
+- hosts: production
+  remote_user: ubuntu
+  vars:
+  roles:
+  - backend

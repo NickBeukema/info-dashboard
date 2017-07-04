@@ -1,0 +1,3 @@
+---
+- name: Install ssl cert
+  shell: /opt/certbot/certbot-auto --nginx

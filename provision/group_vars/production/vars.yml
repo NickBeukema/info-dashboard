@@ -1,0 +1,24 @@
+username: ubuntu
+password: "{{ vault_password }}"
+public_key: ~/.ssh/id_rsa.pub
+home_dir: /home/ubuntu
+front_end_dir: frontend
+back_end_dir: backend
+
+postgresql_admin_user: postgres
+postgresql_version: 9.6
+postgresql_databases:
+  - name: dashboard_app
+    owner: postgres
+
+repo: NickBeukema/info-dashboard
+
+certbot_auto_renew: true
+certbot_auto_renew_user: ubuntu
+certbot_auto_renew_hour: 1
+certbot_auto_renew_minute: 35
+
+certbot_install_from_source: yes
+certbot_repo: https://github.com/certbot/certbot.git
+certbot_version: master
+certbot_keep_updated: yes

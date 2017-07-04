@@ -1,0 +1,28 @@
+---
+- name: Git Clone Repo
+  git:
+    repo: git@github.com:{{repo}}.git
+    dest: "{{ home_dir }}/{{ back_end_dir }}"
+    update: yes
+    force: yes
+    accept_hostkey: yes
+    key_file: "{{ home_dir }}/.ssh/id_rsa"
+  register: git_finished
+
+- name: Running NPM install
+  npm:
+    path: "{{ home_dir }}/{{ back_end_dir }}"
+  register: npm_finished
+  when: git_finished.changed
+
+- name: Deploy Ember App
+  local_action: shell ember deploy production chdir="../frontend"
+  when: git_finished.changed
+
+- name: Move Ember files into public directory
+  shell: cp -r {{ front_end_dir }}/* {{ back_end_dir}}/public/ chdir={{ home_dir }}
+  when: git_finished.changed
+
+- name: Restart App
+  sudo_user: ubuntu
+  shell: pm2 restart app chdir={{ home_dir }}/{{ back_end_dir }}

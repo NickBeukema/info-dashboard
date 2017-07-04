@@ -1,0 +1,19 @@
+---
+- hosts: production
+  remote_user: root
+  vars:
+  roles:
+  - common
+  - ufw
+  - user
+  - role: jdauphant.nginx
+    nginx_sites:
+      dash:
+        template: dash_config.conf.j2
+        server_name: dash.michiganentallergy.com
+  - geerlingguy.certbot
+  - ANXS.postgresql
+  - geerlingguy.nodejs
+  - pm2
+
+- include: deploy.yml

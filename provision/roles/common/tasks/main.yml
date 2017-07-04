@@ -1,0 +1,12 @@
+---
+- name: Upgrade packages
+  apt: upgrade=safe
+
+- name: Install packages
+  apt:
+    name:
+      - fail2ban
+      - git-core
+      - ufw
+    state: present
+    update_cache: yes
