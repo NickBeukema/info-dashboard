@@ -37,7 +37,6 @@ module.exports = function(environment) {
       providers: {
         'google-custom-code': {
           apiKey: '973762602332-2pdqd1b7d1ln8noil93hpkp9k4b332d5.apps.googleusercontent.com',
-          redirectUri: 'http://localhost:3000/torii/redirect.html',
           scope: 'https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/plus.me profile email'
         },
       }
@@ -56,6 +55,8 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.API_HOST = (process.env.API_HOST || 'http://localhost:3000');
+
+    ENV.torii.providers['google-custom-code'].redirectUri = 'http://localhost:3000/torii/redirect.html';
 
     ENV.APP.contentSecurityPolicy = {
       'connect-src': "'self' http://localhost:3000",
@@ -82,6 +83,18 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    ENV.torii.providers['google-custom-code'].redirectUri = 'https://ent-dash.tk/torii/redirect.html';
+
+    ENV.APP.contentSecurityPolicy = {
+      'connect-src': "'self' https://ent-dash.tk",
+    };
+
+    ENV['ember-simple-auth-token'] = {
+      serverTokenEndpoint: 'https://ent-dash.tk/api/get-token',
+      serverTokenRefreshEndpoint: 'https://ent-dash.tk/api/refresh-token',
+      refreshAccessTokens: true,
+      refreshLeeway: 60, // 1 minute
+    };
 
   }
 
