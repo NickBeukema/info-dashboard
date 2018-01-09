@@ -29,3 +29,6 @@ dist
 .env
 public
 tmp
+
+.DS_STORE
+*.retry

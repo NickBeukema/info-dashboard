@@ -1,0 +1,11 @@
+<div class="calendar-list__date">
+  <span class="calendar-list__date--month">{{month}}</span>
+  <span class="calendar-list__date--day">{{day}}</span>
+</div>
+<span class="calendar-list__item-title">{{record.title}}</span>
+<span class="calendar-list__item-time">
+  {{startTime}}
+  {{#unless isFullDayEvent}}
+    - {{endTime}}
+  {{/unless}}
+</span>

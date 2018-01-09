@@ -1,0 +1,39 @@
+
+<div class="calendar-list">
+  <div class="row">
+    {{#if isLoggedIn}}
+      <div class="col-xl-6">
+        <h2 class="calendar-list__title medium-header">Upcoming Events</h2>
+      </div>
+      <div class="col-xl-6">
+        <div class="medium-header__aside">
+          <a {{ action 'refresh'}}>Refresh</a>
+          <a {{ action 'resetCalendar'}}>Choose Calendar</a>
+          <a {{ action (route-action 'invalidateSession') }}>Logout</a>
+        </div>
+      </div>
+    {{else}}
+      <div class="col-md-6">
+      </div>
+      <div class="col-md-6">
+        <div class="medium-header__aside">
+          <a {{ action (route-action 'sessionRequiresAuthentication') }}>Login</a>
+        </div>
+      </div>
+    {{/if}}
+  </div>
+  {{#if isLoggedIn }}
+
+    {{#if isChoosingCalendar}}
+      {{#each calendarData as |cal|}}
+        <p class="calendar-list__calendar-choice" {{action 'chooseCalendar' cal}} >{{cal.id}}</p>
+      {{/each}}
+    {{ else }}
+      {{#each calendarData as |record|}}
+        {{ calendar-display-listing record=record }}
+      {{/each}}
+    {{/if}}
+
+  {{/if}}
+
+</div>

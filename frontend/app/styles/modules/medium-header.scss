@@ -1,0 +1,18 @@
+.medium-header {
+  position: relative;
+
+  &__aside {
+    color: #ccc;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    font-size: 14px;
+
+    a {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+}

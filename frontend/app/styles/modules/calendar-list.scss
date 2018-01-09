@@ -1,0 +1,73 @@
+.calendar-list {
+  margin-top: 10px;
+  //background-color: rgba(0,0,0,.4);
+  color: white;
+  padding: 10px;
+
+  &__title {
+    text-shadow: 0px 0px 11px rgba(0, 0, 0, 0.5);
+    margin-bottom: 15px;
+  }
+
+
+  &__item {
+    background-color: rgba(0,0,0,.4);
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    &-title {
+      font-size: 16px;
+      padding-right: 30px;
+      padding-left: 30px;
+    }
+
+    &-time {
+      margin-left: auto;
+      min-width: 150px;
+      text-align: right;
+    }
+  }
+
+  &__date {
+    width: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 3px;
+    overflow: hidden;
+    flex-shrink: 0;
+
+    &--month {
+      font-size: 12px;
+      width: 100%;
+      text-align: center;
+      background-color: #E8574F;
+      text-transform: uppercase;
+    }
+
+    &--day {
+      width: 100%;
+      font-size: 24px;
+      text-align: center;
+      background-color: white;
+      color: black;
+    }
+
+
+  }
+
+  &__calendar-choice {
+    background-color: rgba(0,0,0,.4);
+    cursor: pointer;
+    padding: 5px 10px;
+    margin-bottom: 5px;
+  }
+
+
+}

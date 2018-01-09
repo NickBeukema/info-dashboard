@@ -29,6 +29,20 @@ module.exports = function(environment) {
       }
     },
 
+    'ember-simple-auth': {
+      authorizer: 'authorizer:token'
+    },
+
+    torii: {
+      providers: {
+        'google-custom-code': {
+          apiKey: '973762602332-2pdqd1b7d1ln8noil93hpkp9k4b332d5.apps.googleusercontent.com',
+          redirectUri: 'http://localhost:3000/torii/redirect.html',
+          scope: 'https://www.googleapis.com/auth/calendar.readonly https://www.googleapis.com/auth/plus.me profile email'
+        },
+      }
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created
@@ -42,6 +56,17 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
     ENV.API_HOST = (process.env.API_HOST || 'http://localhost:3000');
+
+    ENV.APP.contentSecurityPolicy = {
+      'connect-src': "'self' http://localhost:3000",
+    };
+
+    ENV['ember-simple-auth-token'] = {
+      serverTokenEndpoint: 'http://localhost:3000/api/get-token',
+      serverTokenRefreshEndpoint: 'http://localhost:3000/api/refresh-token',
+      refreshAccessTokens: true,
+      refreshLeeway: 60, // 1 minute
+    };
   }
 
   if (environment === 'test') {

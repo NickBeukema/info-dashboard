@@ -52,6 +52,10 @@
   },
   "private": true,
   "dependencies": {
-    "ember-cli-sass": "^6.1.2"
+    "ember-cli-sass": "^6.1.2",
+    "ember-route-action-helper": "^2.0.6",
+    "ember-simple-auth": "^1.4.0",
+    "ember-simple-auth-token": "^2.1.0",
+    "torii": "^0.9.6"
   }
 }
