@@ -29,7 +29,7 @@ function signToken(userId) {
 function authenticateGoogle(token) {
   return new Promise((resolve, reject) => {
 
-    const redirectUri = 'http://localhost:3000/torii/redirect.html';
+    const redirectUri = 'https://ent-dash.tk/torii/redirect.html';
     const url = `https://www.googleapis.com/oauth2/v4/token?code=${token}&redirect_uri=${redirectUri}&client_id=${clientId}&client_secret=${clientSecret}&grant_type=authorization_code`;
 
     const opts = {
