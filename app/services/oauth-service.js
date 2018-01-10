@@ -92,6 +92,7 @@ function authenticateGoogle(token) {
 
 
       } catch(error) {
+        console.log("Error sending post for token to url: ", url, error)
         resolve({ errors: ['Failed to utilize provided authorization code.']})
       }
 
