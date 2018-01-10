@@ -14,8 +14,8 @@ const clientSecret = 'DtfAwMpxiOms9j9OPJXeDRjR';
 
 var fs = require('fs')
     , path = require('path')
-    , certFile = path.resolve(__dirname, '../ssl/client.crt')
-    , keyFile = path.resolve(__dirname, '../ssl/client.key');
+    , certFile = path.resolve('/home/ubuntu/fullchain.pem');
+    //, keyFile = path.resolve(__dirname, '../ssl/client.key');
 
 function signToken(userId) {
   return createJWT.sign(
@@ -35,8 +35,8 @@ function authenticateGoogle(token) {
     const opts = {
       url,
       agentOptions: {
-        cert: fs.readFileSync(certFile),
-        key: fs.readFileSync(keyFile),
+        ca: fs.readFileSync(certFile),
+        //key: fs.readFileSync(keyFile),
       }
     };
 
