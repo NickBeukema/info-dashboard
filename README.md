@@ -19,3 +19,9 @@
 
         ember s --proxy http://127.0.0.1:3000 --output-path ../public/
 
+
+### Deploys
+
+1. Make sure you're in the `provision` directory
+
+        ansible-playbook deploy.yml --ask-vault-pass
