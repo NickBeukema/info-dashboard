@@ -83,15 +83,15 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.torii.providers['google-custom-code'].redirectUri = 'https://ent-dash.tk/torii/redirect.html';
+    ENV.torii.providers['google-custom-code'].redirectUri = 'https://dashboard.michiganfyzical.com/torii/redirect.html';
 
     ENV.APP.contentSecurityPolicy = {
-      'connect-src': "'self' https://ent-dash.tk",
+      'connect-src': "'self' https://dashboard.michiganfyzical.com",
     };
 
     ENV['ember-simple-auth-token'] = {
-      serverTokenEndpoint: 'https://ent-dash.tk/api/get-token',
-      serverTokenRefreshEndpoint: 'https://ent-dash.tk/api/refresh-token',
+      serverTokenEndpoint: 'https://dashboard.michiganfyzical.com/api/get-token',
+      serverTokenRefreshEndpoint: 'https://dashboard.michiganfyzical.com/api/refresh-token',
       refreshAccessTokens: true,
       refreshLeeway: 60, // 1 minute
     };
