@@ -11,6 +11,12 @@ export default Ember.Component.extend({
   activeImageClass: 'background-slider__image--active',
   fadingInClass: 'background-slider__image--fading-in',
 
+  imageArray: Ember.computed(function() {
+    return Array.from({ length: 14 }).map((_,idx) => {
+      return idx + 1;
+    });
+  }),
+
   getAllImages() {
     return this.$(this.get('imageSelector'));
   },
