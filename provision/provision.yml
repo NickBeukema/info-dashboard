@@ -10,7 +10,7 @@
     nginx_sites:
       dash:
         template: dash_config.conf.j2
-        server_name: ent-dash.tk
+        server_name: dashboard.michiganfyzical.com
   - geerlingguy.certbot
   - ANXS.postgresql
   - geerlingguy.nodejs
