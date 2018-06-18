@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  duration: 8000,
+  duration: 25000,
   fadeDuration: 4000,
 
   imageSelector: '.background-slider__image',
