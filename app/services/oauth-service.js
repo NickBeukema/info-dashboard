@@ -43,7 +43,7 @@ function authenticateGoogle(token) {
 
     request.post(opts, (error, response, body) => {
       try {
-        console.log(body);
+        console.log(error, body);
 
 
         const parsedBody = JSON.parse(body);
